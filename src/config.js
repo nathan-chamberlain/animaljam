@@ -135,8 +135,8 @@ export const SPRITES = {
   rocket: 'tile_rocket',
   predators: [
     { key: 'creature_161', name: 'Boar', hp: 18, speed: 50, damage: 1, score: 15 },
-    { key: 'creature_165', name: 'Wolf', hp: 30, speed: 65, damage: 1, score: 30 },
-    { key: 'creature_164', name: 'Bear', hp: 50, speed: 45, damage: 2, score: 60 },
+    { key: 'wolf', name: 'Wolf', hp: 30, speed: 65, damage: 1, score: 30 },
+    { key: 'bear', name: 'Bear', hp: 50, speed: 45, damage: 2, score: 60 },
     { key: 'dungeon_110', name: 'Crab', hp: 70, speed: 55, damage: 2, score: 100 },
   ],
 };

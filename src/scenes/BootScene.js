@@ -164,6 +164,11 @@ export default class BootScene extends Phaser.Scene {
     CREATURE_TILES.forEach((id) => {
       this.load.image(`creature_${id}`, `assets/creatures/tile_${String(id).padStart(4, '0')}.png`);
     });
+
+    this.load.spritesheet('wolf', 'assets/creatures/Wolf and Bear spritesheets/Wolf.png', { frameWidth: 16, frameHeight: 16 });
+    this.load.spritesheet('wolf_attack', 'assets/creatures/Wolf and Bear spritesheets/Wolf_Attack.png', { frameWidth: 24, frameHeight: 24 });
+    this.load.spritesheet('bear', 'assets/creatures/Wolf and Bear spritesheets/Bear.png', { frameWidth: 24, frameHeight: 24 });
+    this.load.spritesheet('bear_attack', 'assets/creatures/Wolf and Bear spritesheets/Bear_Attack.png', { frameWidth: 32, frameHeight: 32 });
   }
 
   create() {

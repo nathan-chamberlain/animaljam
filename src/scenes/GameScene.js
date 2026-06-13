@@ -62,6 +62,7 @@ export default class GameScene extends Phaser.Scene {
     this.createGridOverlay();
     this.createTurretGhost();
     this.createPlayer();
+    this.createAnimations();
     this.setupInput();
     this.setupCollisions();
     this.spawnInitialAnimals();
@@ -356,6 +357,206 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, MAP_W * T, MAP_H * T);
     this.cameras.main.setZoom(GAME.CAMERA_ZOOM);
     this.cameras.main.roundPixels = true;
+  }
+
+  createAnimations() {
+    // Wolf animations
+    this.anims.create({
+      key: 'wolf_idle_right',
+      frames: this.anims.generateFrameNumbers('wolf', { frames: [0] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'wolf_idle_left',
+      frames: this.anims.generateFrameNumbers('wolf', { frames: [4] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'wolf_idle_down',
+      frames: this.anims.generateFrameNumbers('wolf', { frames: [8] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'wolf_idle_up',
+      frames: this.anims.generateFrameNumbers('wolf', { frames: [12] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'wolf_walk_right',
+      frames: this.anims.generateFrameNumbers('wolf', { start: 16, end: 19 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'wolf_walk_left',
+      frames: this.anims.generateFrameNumbers('wolf', { start: 20, end: 23 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'wolf_walk_down',
+      frames: this.anims.generateFrameNumbers('wolf', { start: 24, end: 27 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'wolf_walk_up',
+      frames: this.anims.generateFrameNumbers('wolf', { start: 28, end: 31 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'wolf_attack_right',
+      frames: this.anims.generateFrameNumbers('wolf_attack', { frames: [0, 1, 2, 3] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'wolf_attack_left',
+      frames: this.anims.generateFrameNumbers('wolf_attack', { frames: [4, 5, 6, 7] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'wolf_attack_down',
+      frames: this.anims.generateFrameNumbers('wolf_attack', { frames: [8, 9, 10, 11] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'wolf_attack_up',
+      frames: this.anims.generateFrameNumbers('wolf_attack', { frames: [12, 13, 14, 15] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'wolf_death_right',
+      frames: this.anims.generateFrameNumbers('wolf', { frames: [48] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'wolf_death_left',
+      frames: this.anims.generateFrameNumbers('wolf', { frames: [52] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    // Bear animations
+    this.anims.create({
+      key: 'bear_idle_right',
+      frames: this.anims.generateFrameNumbers('bear', { frames: [0] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'bear_idle_left',
+      frames: this.anims.generateFrameNumbers('bear', { frames: [4] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'bear_idle_down',
+      frames: this.anims.generateFrameNumbers('bear', { frames: [8] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'bear_idle_up',
+      frames: this.anims.generateFrameNumbers('bear', { frames: [12] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'bear_walk_right',
+      frames: this.anims.generateFrameNumbers('bear', { start: 16, end: 19 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'bear_walk_left',
+      frames: this.anims.generateFrameNumbers('bear', { start: 20, end: 23 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'bear_walk_down',
+      frames: this.anims.generateFrameNumbers('bear', { start: 24, end: 27 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'bear_walk_up',
+      frames: this.anims.generateFrameNumbers('bear', { start: 28, end: 31 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'bear_attack_right',
+      frames: this.anims.generateFrameNumbers('bear_attack', { frames: [0, 1, 2, 3] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'bear_attack_left',
+      frames: this.anims.generateFrameNumbers('bear_attack', { frames: [4, 5, 6, 7] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'bear_attack_down',
+      frames: this.anims.generateFrameNumbers('bear_attack', { frames: [8, 9, 10, 11] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'bear_attack_up',
+      frames: this.anims.generateFrameNumbers('bear_attack', { frames: [12, 13, 14, 15] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'bear_death_right',
+      frames: this.anims.generateFrameNumbers('bear', { frames: [48] }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    this.anims.create({
+      key: 'bear_death_left',
+      frames: this.anims.generateFrameNumbers('bear', { frames: [52] }),
+      frameRate: 10,
+      repeat: 0,
+    });
   }
 
   setupInput() {
@@ -692,7 +893,17 @@ export default class GameScene extends Phaser.Scene {
     predator.wallCooldown = 0;
     predator.eatCooldown = 0;
     predator.pushCooldown = 0;
+    predator.direction = 'right';
     predator.setCollideWorldBounds(true);
+    
+    if (template.key === 'wolf' || template.key === 'bear') {
+      predator.play(`${template.key}_idle_right`);
+      if (template.key === 'wolf') {
+        predator.setScale(1.5);
+      } else if (template.key === 'bear') {
+        predator.setScale(1);
+      }
+    }
   }
 
   hitPredator(bullet, predator) {
@@ -870,6 +1081,38 @@ export default class GameScene extends Phaser.Scene {
       }
 
       if (target) this.physics.moveToObject(predator, target, predator.speed);
+    });
+  }
+
+  updatePredatorAnimations() {
+    this.predators.children.each((predator) => {
+      if (!predator.active) return;
+      
+      const template = SPRITES.predators.find((pr) => pr.key === predator.texture.key);
+      if (!template || !['wolf', 'bear'].includes(template.key)) return;
+      
+      const speed = Math.hypot(predator.body.velocity.x, predator.body.velocity.y);
+      let direction = predator.direction;
+      
+      if (speed > 1) {
+        const angle = Phaser.Math.Angle.Between(0, 0, predator.body.velocity.x, predator.body.velocity.y);
+        const degrees = Phaser.Math.RadToDeg(angle);
+        
+        if (degrees > -45 && degrees <= 45) {
+          direction = 'right';
+        } else if (degrees > 45 && degrees <= 135) {
+          direction = 'down';
+        } else if (degrees > 135 || degrees <= -135) {
+          direction = 'left';
+        } else {
+          direction = 'up';
+        }
+        
+        predator.direction = direction;
+        predator.play(`${template.key}_walk_${direction}`, true);
+      } else {
+        predator.play(`${template.key}_idle_${predator.direction}`, true);
+      }
     });
   }
 
@@ -1065,6 +1308,7 @@ export default class GameScene extends Phaser.Scene {
     this.updateAnimalsInPen();
     this.updateBreeding(delta);
     this.updatePredatorAI();
+    this.updatePredatorAnimations();
     this.updateTurrets(delta);
     this.updateBullets();
     this.checkWaveComplete();
