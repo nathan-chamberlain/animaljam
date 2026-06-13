@@ -1,0 +1,68 @@
+Analyze the Phaser project and determine where animations are currently loaded and registered. Add support for the attached wolf and bear spritesheets.Create idle, walk, attack, and death animations where available. Preserve the existing architecture and naming conventions. Attack spritesheets may require scaling because their frame dimensions differ from the movement spritesheets.
+
+Wolf.png
+
+Frame size: 16x16
+Rows: 14
+Columns: 4
+
+Row 0 = idle right
+Row 1 = idle left
+Row 2 = idle down
+Row 3 = idle up
+Row 4 = walk right
+Row 5 = walk left
+Row 6 = walk down
+Row 7 = walk up
+Row 8 = run right
+Row 9 = run left
+Row 10 = run down
+Row 11 = run up
+Row 12 = death right
+Row 13 = death left
+
+
+Wolf_Attack.png
+
+Frame size: 24x24
+Rows: 4
+Columns: 4
+
+Row 0 = attack right
+Row 1 = attack left
+Row 2 = attack down
+Row 3 = attack up
+
+
+Bear.png
+
+Frame size: 24x24
+Rows: 14
+Columns: 4
+
+Row 0 = idle right
+Row 1 = idle left
+Row 2 = idle down
+Row 3 = idle up
+Row 4 = walk right
+Row 5 = walk left
+Row 6 = walk down
+Row 7 = walk up
+Row 8 = run right
+Row 9 = run left
+Row 10 = run down
+Row 11 = run up
+Row 12 = death right
+Row 13 = death left
+
+
+Bear_Attack.png
+
+Frame size: 32x32
+Rows: 4
+Columns: 4
+
+Row 0 = attack right
+Row 1 = attack left
+Row 2 = attack down
+Row 3 = attack up
